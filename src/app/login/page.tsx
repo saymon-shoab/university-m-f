@@ -1,11 +1,17 @@
-import React from 'react'
+import LoginPage from "@/components/Login/Login"
+import { Metadata } from 'next';
 
-const LoginPage = () => {
+export const metadata: Metadata = {
+  title: "UMS | Login"
+}
+
+const Login = () => {
+  
   return (
-    <div>
-      <h1>Login page</h1>
-    </div>
+    <>
+      <LoginPage />
+    </>
   )
 }
 
-export default LoginPage
+export default Login

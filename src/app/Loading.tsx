@@ -1,9 +1,11 @@
+import { Flex, Spin } from 'antd';
+
 
 const Loading = () => {
   return (
-    <div>
-      <h1>Loading....</h1>
-    </div>
+    <Flex align="center" gap="middle">
+    <Spin size="large" fullscreen />
+  </Flex>
   )
 }
 

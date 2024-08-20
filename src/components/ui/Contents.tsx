@@ -1,8 +1,10 @@
 "use client"
 
 import { Breadcrumb, Layout, theme } from "antd";
+import UMBreadCrumb from "./UMBreadCrumb";
+import Header from "./Header";
 
-const { Header, Content, Footer, Sider } = Layout;
+const {  Content } = Layout;
 
 
 const Contents = ({children}:{children:React.ReactNode}) => {
@@ -11,6 +13,7 @@ const Contents = ({children}:{children:React.ReactNode}) => {
       } = theme.useToken();
   return (
     <Content style={{ margin: '0 16px' , minHeight:"100vh", color:'black'}}>
+      <Header></Header>
     <Breadcrumb style={{ margin: '16px 0' }}>
       <Breadcrumb.Item>User</Breadcrumb.Item>
       <Breadcrumb.Item>Bill</Breadcrumb.Item>
@@ -23,6 +26,7 @@ const Contents = ({children}:{children:React.ReactNode}) => {
         borderRadius: borderRadiusLG,
       }}
     >
+      <UMBreadCrumb items={[]}/>
       {children}
     </div>
   </Content>
