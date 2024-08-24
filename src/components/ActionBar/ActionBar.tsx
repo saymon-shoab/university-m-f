@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 type ActionBarProps = {
-    title?: "string",
+    title?: string
     children?: React.ReactElement | React.ReactNode
 }
 

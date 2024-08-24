@@ -1,5 +1,6 @@
 'use client'
 
+import ActionBar from '@/components/ActionBar/ActionBar'
 import UMBreadCrumb from '@/components/ui/UMBreadCrumb'
 import { getUserInfo } from '@/service/auth.service'
 import { Button } from 'antd'
@@ -18,9 +19,9 @@ const manageAdmin = () => {
         ]}
       />
 
-    <h1>Manage Faculty page</h1>
+    <ActionBar title= "Admin List"></ActionBar>
       <Link href={"/super_admin/admin/create"}>
-        <Button>Create Student</Button>
+      <Button type="primary">Create Admin</Button>
       </Link>
     
     </div>
