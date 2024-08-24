@@ -12,7 +12,6 @@ import Loading from "../Loading";
 const DashboardLoayout = ({children}:{children:React.ReactNode}) => {
   const userLoggedIn = isLoggedIn()
   const [isLoading, setIsLoading] = useState(false)
-  console.log("loading state", isLoading)
   const router = useRouter()
   useEffect(()=>{
     // setIsLoading(true)

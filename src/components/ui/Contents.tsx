@@ -1,37 +1,28 @@
-"use client"
-
-import { Breadcrumb, Layout, theme } from "antd";
-import UMBreadCrumb from "./UMBreadCrumb";
+"use client";
+import { Layout } from "antd";
 import Header from "./Header";
 
-const {  Content } = Layout;
+const { Content } = Layout;
 
-
-const Contents = ({children}:{children:React.ReactNode}) => {
-    const {
-        token: { colorBgContainer, borderRadiusLG },
-      } = theme.useToken();
+const Contents = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Content style={{ margin: '0 16px' , minHeight:"100vh", color:'black'}}>
-      <Header></Header>
-    <Breadcrumb style={{ margin: '16px 0' }}>
-      <Breadcrumb.Item>User</Breadcrumb.Item>
-      <Breadcrumb.Item>Bill</Breadcrumb.Item>
-    </Breadcrumb>
-    <div
+    <Content
       style={{
-        padding: 24,
-        minHeight: 360,
-        background: colorBgContainer,
-        borderRadius: borderRadiusLG,
+        minHeight: "100vh",
+        color: "black",
       }}
     >
-      <UMBreadCrumb items={[]}/>
-      {children}
-    </div>
-  </Content>
+      <Header />
 
-  )
-}
+      <div
+        style={{
+          padding: "10px",
+        }}
+      >
+        {children}
+      </div>
+    </Content>
+  );
+};
 
-export default Contents
+export default Contents;
