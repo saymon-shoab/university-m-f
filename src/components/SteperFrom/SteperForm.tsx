@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button, message, Steps } from "antd";
 import { FormProvider, useForm } from "react-hook-form";
 import { getFromLocalStorage, setToLocalStorage } from "@/utills/local_storage";
+import { useRouter } from "next/navigation";
 
 interface ISteps {
   title?: string;
@@ -41,7 +42,7 @@ const SteperForm = ({ steps, submitHandler, navigateLink }: IStepsProps) => {
     submitHandler(data);
     reset();
     setToLocalStorage("step", JSON.stringify({ step: 0 }));
-    router.push(navigateLink);
+    navigateLink && router.push(navigateLink);
   };
   return (
     <>
