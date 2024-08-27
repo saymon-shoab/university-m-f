@@ -10,6 +10,8 @@ import { genderOptions, departmentOptions, bloodGroupOptions } from '@/constants
 import UploadImage from '@/components/ui/Uploadimage'
 import FormTextArea from "@/components/Forms/FormTextArea";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
+import { yupResolver } from '@hookform/resolvers/yup'
+import { adminSchema } from '@/schemas/admin'
 
 
 type FormValues = {
@@ -43,9 +45,9 @@ const createAdminPage = () => {
           },
         ]}
       />
-      <h1>Create Admin Page</h1>
+      <h1>Create Admin</h1>
 
-      <Forms submitHandler={onSubmit}>
+      <Forms submitHandler={onSubmit} resolver={yupResolver(adminSchema)}>
         <div
           style={{
             border: "1px solid #d9d9d9",
@@ -71,7 +73,7 @@ const createAdminPage = () => {
             <Col className="gutter-row" style={{
               marginBottom: "10px",
             }} span={8}>
-              <FormInput name='admin.name.midName' type="text" size="large" label="Mid Name" />
+              <FormInput name='admin.name.middleName' type="text" size="large" label="Mid Name" />
             </Col>
             <Col className="gutter-row" style={{
               marginBottom: "10px",
