@@ -1,32 +1,31 @@
-import UMBreadCrumb from '@/components/ui/UMBreadCrumb'
-import { getUserInfo } from '@/service/auth.service'
-import { Button } from 'antd'
-import Link from 'next/link'
-import ActionBar from '@/components/ActionBar/ActionBar'
-import React from 'react'
+'use client'
+import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
+import { getUserInfo } from "@/service/auth.service";
+import { Button } from "antd";
+import Link from "next/link";
+import ActionBar from "@/components/ActionBar/ActionBar";
+import React from "react";
 
 const ManageFacultyPage = () => {
-  const {role} = getUserInfo() as any
+  const { role } = getUserInfo() as any;
   return (
     <div>
-          <UMBreadCrumb
+      <UMBreadCrumb
         items={[
           {
             label: `${role}`,
-            link: `${role}`
-          }
+            link: `${role}`,
+          },
         ]}
       />
 
-    <ActionBar title="Manage Faculty page">
-    <Link href={"/super_admin/manage-student/create"}>
-        <Button>Create Student</Button>
-      </Link>
-    </ActionBar>
-   
-    
+      <ActionBar title=" Faculty List">
+        <Link href={"/super_admin/manage-faculty/create"}>
+          <Button type="primary">Create Faculty</Button>
+        </Link>
+      </ActionBar>
     </div>
-  )
-}
+  );
+};
 
-export default ManageFacultyPage
+export default ManageFacultyPage;

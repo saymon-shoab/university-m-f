@@ -12,7 +12,12 @@ type FormProps = {
   submitHandler: SubmitHandler<any>;
 } & FormConfig;
 
-const Forms = ({ children, submitHandler, defaultValues ,resolver}: FormProps) => {
+const Forms = ({
+  children,
+  submitHandler,
+  defaultValues,
+  resolver,
+}: FormProps) => {
   const formConfig: FormConfig = {};
   if (!!defaultValues) {
     formConfig["defaultValues"] = defaultValues;

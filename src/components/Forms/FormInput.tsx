@@ -31,7 +31,7 @@ const FormInput = ({
   console.log("bal sal",errorMessage)
   return (
     <>
-      {label ? label : null}
+      <p style={{marginBottom:"3px"}}> {label ? label : null} </p>
       <Controller
         control={control}
         name={name}
@@ -55,7 +55,7 @@ const FormInput = ({
           )
         }
       />
-      <small style={{color:"red"}}>{errorMessage}</small>
+      <p style={{color:"red"}}>{errorMessage}</p>
     </>
   );
 };
