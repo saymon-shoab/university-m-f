@@ -28,7 +28,6 @@ const FormInput = ({
   } = useFormContext();
   // console.log("errors",errors)
   const errorMessage = getErrorMessageByPropertyName(errors, name);
-  console.log("bal sal",errorMessage)
   return (
     <>
       <p style={{marginBottom:"3px"}}> {label ? label : null} </p>
