@@ -26,7 +26,6 @@ const FormInput = ({
     control,
     formState: { errors },
   } = useFormContext();
-  // console.log("errors",errors)
   const errorMessage = getErrorMessageByPropertyName(errors, name);
   return (
     <>

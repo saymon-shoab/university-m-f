@@ -8,7 +8,6 @@ import FormInput from "@/components/Forms/FormInput";
 import FormSelectField from "@/components/Forms/FormSelectField";
 import {
   genderOptions,
-  departmentOptions,
   bloodGroupOptions,
 } from "@/constants/global";
 import UploadImage from "@/components/ui/Uploadimage";
@@ -16,9 +15,22 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { adminSchema } from "@/schemas/admin";
+import { useGetDepartmentsQuery } from "@/redux/api/departmentApi";
+import { IDepartment } from "@/types";
 
 
 const createAdminPage = () => {
+  const query: Record<string, any> = {limit:100, page:1};
+
+  const { data, isLoading } = useGetDepartmentsQuery({limit:100, page:1});
+  //@ts-ignore
+  const departments:IDepartment[] =data?.departments ? data?.departments : []
+  const departmentOptions = departments.map(item=>{
+    return {
+      label: item?.title,
+      value: item?.id
+    }
+  })
   const onSubmit = async (data: any) => {
     try {
       // const res = await
@@ -154,7 +166,8 @@ const createAdminPage = () => {
               }}
               span={8}
             >
-              <UploadImage />
+        
+              <UploadImage name="file"/>
             </Col>
           </Row>
         </div>

@@ -3,20 +3,17 @@ import FormInput from "@/components/Forms/FormInput";
 import Forms from "@/components/Forms/Forms";
 import { useAddDepartmentMutation } from "@/redux/api/departmentApi";
 import { Button, Col, message, Row } from "antd";
-import React from "react";
 
 const createDepartmentPage = () => {
-  const [addDepartment] = useAddDepartmentMutation();
+  const [addDepartment] = useAddDepartmentMutation(undefined);
 
   const onSubmit = async (data: any) => {
-    message.loading("createing....")
-    await addDepartment(data);
-    message.success("Department added successfully")
     try {
-      console.log(data);
+      message.loading("createing....");
+      await addDepartment(data);
+      message.success("Department added successfully");
     } catch (err: any) {
-      console.log(err);
-      message.error(err.message)
+      message.error(err.message);
     }
   };
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { Button, Table } from "antd";
+import { Table } from "antd";
 
 type ITablePropsType = {
   columns?: any;

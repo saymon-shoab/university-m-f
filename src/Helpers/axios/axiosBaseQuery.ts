@@ -8,18 +8,17 @@ export const axiosBaseQuery =
     { baseUrl }: { baseUrl: string } = { baseUrl: '' }
   ): BaseQueryFn<
     {
-      url: string
-      method?: AxiosRequestConfig['method']
-      data?: AxiosRequestConfig['data']
-      params?: AxiosRequestConfig['params']
-      headers?: AxiosRequestConfig['headers']
-      meta?: IMeta
-      contentType?: string
+      url: string;
+      method: AxiosRequestConfig["method"];
+      data?: AxiosRequestConfig["data"];
+      params?: AxiosRequestConfig["params"];
+      meta?: IMeta;
+      contentType?: string;
     },
     unknown,
     unknown
   > =>
-  async ({ url, method, data, params, headers , contentType}) => {
+  async ({ url, method, data, params , contentType}) => {
     try {
       const result = await axiosInstance({
         url: baseUrl + url, method, data, params, headers:{
