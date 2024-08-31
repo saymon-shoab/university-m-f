@@ -10,7 +10,7 @@ export const departmentApi = baseApi.injectEndpoints({
     getDepartments: build.query({
       query: (arg:Record<string , any> ) => ({
         url: MANAGEMENT_DEPARTMENT_URL ,
-        method: 'get',
+        method: 'GET',
         params: arg
       }),
       transformResponse: (response:IDepartment, meta:IMeta) =>{

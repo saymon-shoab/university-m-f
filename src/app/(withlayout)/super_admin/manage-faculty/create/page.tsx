@@ -1,7 +1,7 @@
 'use client'
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
-import Forms from "@/components/Forms/Forms";
+import Forms from "@/components/Forms/Form";
 import FormSelectField from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
@@ -98,7 +98,7 @@ const createFacultyPage = () => {
         <Col className="gutter-row" style={{
           marginBottom: "10px",
         }} span={8}>
-          <UploadImage />
+          <UploadImage name={"file"} />
         </Col>
       </Row>
         </div>

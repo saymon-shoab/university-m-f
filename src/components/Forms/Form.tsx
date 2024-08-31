@@ -12,7 +12,7 @@ type FormProps = {
   submitHandler: SubmitHandler<any>;
 } & FormConfig;
 
-const Forms = ({
+const Form = ({
   children,
   submitHandler,
   defaultValues,
@@ -43,4 +43,4 @@ const Forms = ({
   );
 };
 
-export default Forms;
+export default Form;

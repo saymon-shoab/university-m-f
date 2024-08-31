@@ -22,7 +22,7 @@ export const axiosBaseQuery =
     try {
       const result = await axiosInstance({
         url: baseUrl + url, method, data, params, headers:{
-          contentType: contentType || 'application/json'
+          "Content-Type": contentType || 'application/json'
         },
       })
       return result

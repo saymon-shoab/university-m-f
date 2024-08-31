@@ -2,7 +2,7 @@
 import { Button, Col, message, Row } from 'antd'
 import loginImage from '../../assets/loginImage.png'
 import Image from 'next/image'
-import Form from '../../components/Forms/Forms'
+import Form from '../Forms/Form'
 import FormInput from '@/components/Forms/FormInput'
 import { SubmitHandler } from 'react-hook-form'
 import { useUserLoginMutation } from '@/redux/api/authApi'

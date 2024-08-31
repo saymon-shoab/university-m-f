@@ -1,6 +1,6 @@
 "use client";
 import FormInput from "@/components/Forms/FormInput";
-import Forms from "@/components/Forms/Forms";
+import Forms from "@/components/Forms/Form";
 import { useAddDepartmentMutation } from "@/redux/api/departmentApi";
 import { Button, Col, message, Row } from "antd";
 

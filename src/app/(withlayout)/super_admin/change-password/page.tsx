@@ -1,6 +1,6 @@
 'use client'
 import FormInput from '@/components/Forms/FormInput'
-import Forms from '@/components/Forms/Forms'
+import Forms from '@/components/Forms/Form'
 import { Button, Col, Row } from 'antd'
 import React from 'react'
 import { SubmitHandler } from 'react-hook-form'
