@@ -8,9 +8,7 @@ import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import UploadImage from "@/components/ui/Uploadimage";
 import {
   acDepartmentOptions,
-  acSemesterOptions,
   bloodGroupOptions,
-  departmentOptions,
   facultyOptions,
   genderOptions,
 } from "@/constants/global";

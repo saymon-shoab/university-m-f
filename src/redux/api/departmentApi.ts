@@ -51,6 +51,7 @@ export const departmentApi = baseApi.injectEndpoints({
       }),
       invalidatesTags:[tagTypes.department]
     }),
+    
   }),
 })
 

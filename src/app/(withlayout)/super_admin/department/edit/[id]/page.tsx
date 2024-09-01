@@ -2,7 +2,7 @@
 
 import ActionBar from '@/components/ActionBar/ActionBar';
 import FormInput from '@/components/Forms/FormInput';
-import Forms from '@/components/Forms/Forms';
+import Forms from '@/components/Forms/Form';
 import UMBreadCrumb from '@/components/ui/UMBreadCrumb';
 import { useDepartmentQuery, useUpdateDepartmentMutation } from '@/redux/api/departmentApi';
 import { getUserInfo } from '@/service/auth.service';

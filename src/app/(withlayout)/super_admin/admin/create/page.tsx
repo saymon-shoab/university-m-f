@@ -18,7 +18,6 @@ import { Button, Col, Row, message } from "antd";
 
 const CreateAdminPage = () => {
   const { data, isLoading } = useGetDepartmentsQuery({ limit: 100, page: 1 });
-
   //@ts-ignore
   const departments: IDepartment[] = data?.departments;
   const departmentOptions =

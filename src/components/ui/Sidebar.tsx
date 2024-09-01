@@ -53,7 +53,7 @@ const Sidebar = () => {
     <Sider collapsible 
     collapsed={collapsed} 
     onCollapse={(value) => setCollapsed(value)}
-    width={200}
+    width={300}
     style={{
         overflow:'auto',
         height:"100vh",

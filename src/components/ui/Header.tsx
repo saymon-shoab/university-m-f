@@ -8,7 +8,8 @@ import { authKey } from '@/constants/storageKey';
 const { Header: AntHeader } = Layout;
 
 const Header = () => {
-    const { role } = getUserInfo() as any
+    const { role , ...userData} = getUserInfo() as any
+    console.log("userData",userData);
     const router = useRouter()
     const logout = ()=>{
 

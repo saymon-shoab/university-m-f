@@ -62,7 +62,7 @@ const StudentInfo = () => {
         <Col className="gutter-row" style={{
           marginBottom: "10px",
         }} span={8}>
-          <UploadImage />
+          <UploadImage name={"file"} />
         </Col>
       </Row>
     </div>

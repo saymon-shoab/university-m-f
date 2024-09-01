@@ -59,8 +59,8 @@ export const sidebarItems = (role:string) => {
           key:`/${role}/academic/department`
         },
         {
-          label:<Link href={`/${role}/academic/faculty`}>Semester</Link>,
-          key:`/${role}/academic/faculty`
+          label: <Link href={`/${role}/academic/semester`}>Semesters</Link>,
+          key: `/${role}/academic/semester`,
         },
       ]
     },
@@ -86,21 +86,6 @@ export const sidebarItems = (role:string) => {
           key:`/${role}/course`
         }
       ]
-    },
-    {
-      label:<Link href={`/${role}/academic/faculty`}>Faculties</Link>,
-      icon: <TableOutlined />,
-      key:`/${role}/academic/faculty`,
-    },
-    {
-      label:<Link href={`/${role}/academic/department`}>Department</Link>,
-      icon: <TableOutlined />,
-      key:`/${role}/academic/department`
-    },
-    {
-      label:<Link href={`/${role}/academic/faculty`}>Semester</Link>,
-      icon: <TableOutlined />,
-      key:`/${role}/academic/faculty`
     },
   ]
   const facultySidebarItems: MenuProps["items"] = [
