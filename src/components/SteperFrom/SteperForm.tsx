@@ -13,15 +13,20 @@ interface IStepsProps {
   steps: ISteps[];
   submitHandler: (er: any) => void;
   navigateLink?: string;
+  parsistKey: string
 }
-const SteperForm = ({ steps, submitHandler, navigateLink }: IStepsProps) => {
+const SteperForm = ({ steps, submitHandler, navigateLink , parsistKey}: IStepsProps) => {
   const router = useRouter();
   const [current, setCurrent] = useState<number>(
     !!getFromLocalStorage("step")
       ? Number(JSON.parse(getFromLocalStorage("step") as string).step)
       : 0
   );
-
+  const [savedValues, setSavedValues] = useState(
+    !!getFromLocalStorage(parsistKey)
+      ? JSON.parse(getFromLocalStorage(parsistKey) as string)
+      : ""
+  );
   useEffect(() => {
     setToLocalStorage("step", JSON.stringify({ step: current }));
   }, [current]);
@@ -36,12 +41,18 @@ const SteperForm = ({ steps, submitHandler, navigateLink }: IStepsProps) => {
 
   const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
-  const methods = useForm();
+  const methods = useForm({defaultValues:savedValues});
+  const watch = methods.watch()
+  useEffect(() => {
+    setToLocalStorage(parsistKey, JSON.stringify(watch));
+  }, [watch, parsistKey, methods]);
+
   const { handleSubmit, reset } = methods;
   const handleSutdentOnSubmit = (data: any) => {
     submitHandler(data);
     reset();
     setToLocalStorage("step", JSON.stringify({ step: 0 }));
+    setToLocalStorage(parsistKey, JSON.stringify({}));
     navigateLink && router.push(navigateLink);
   };
   return (

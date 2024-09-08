@@ -27,11 +27,16 @@ const CreateFacultyPage = () => {
     message.loading("Creating...");
     try {
       const res = await addFacultyWithFormData(formData);
-      if (!!res) {
+      console.log("res", res);
+      if (!!res.data) {
         message.success("Faculty created successfully!");
+        console.log(res.data);
+      }else if(!!res.error){
+        console.log("baler error",res.error);
+
       }
     } catch (err: any) {
-      console.error(err.message);
+      console.error("baler error",err.message);
     }
   };
 
@@ -110,6 +115,7 @@ const CreateFacultyPage = () => {
               <ACDepartmentField
                 name="faculty.academicDepartment"
                 label="Academic Department"
+
               />
             </Col>
 

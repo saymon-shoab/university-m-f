@@ -3,6 +3,9 @@ import UploadImage from "../ui/Uploadimage"
 import FormSelectField from "../Forms/FormSelectField"
 import FormInput from "../Forms/FormInput"
 import { facultyOptions, genderOptions, acDepartmentOptions, acSemesterOptions } from "@/constants/global"
+import ACDepartmentField from "../Forms/AcDepartmentField"
+import ACFacultyField from "../Forms/ACFacultyField"
+import ACSemesterField from "../Forms/ACSemesterField"
 
 
 const StudentInfo = () => {
@@ -41,17 +44,20 @@ const StudentInfo = () => {
         <Col className="gutter-row" style={{
           marginBottom: "10px",
         }} span={8}>
-          <FormSelectField name='student.academicDepartment' options={acDepartmentOptions} size="large" label="Academic Department" placeholder="Select" />
+          {/* <FormSelectField name='student.academicDepartment' options={acDepartmentOptions} size="large" label="Academic Department" placeholder="Select" /> */}
+          <ACDepartmentField name='student.academicDepartment' label="Academic Department" />
         </Col>
         <Col className="gutter-row" style={{
           marginBottom: "10px",
         }} span={8}>
-          <FormSelectField name='student.academicFaculty' options={facultyOptions} size="large" label="Academic AcademicFaculry" placeholder="Select" />
+          {/* <FormSelectField name='student.academicFaculty' options={facultyOptions} size="large" label="Academic AcademicFaculry" placeholder="Select" /> */}
+          <ACFacultyField  name='student.academicFaculty'  label="Academic AcademicFaculry"/>
         </Col>
         <Col className="gutter-row" style={{
           marginBottom: "10px",
         }} span={8}>
-          <FormSelectField name='student.academicSemester' options={acSemesterOptions} size="large" label="Academic Semester" placeholder="Select" />
+          {/* <FormSelectField name='student.academicSemester' options={acSemesterOptions} size="large" label="Academic Semester" placeholder="Select" /> */}
+          <ACSemesterField  name='student.academicSemester' label="Academic Semester" />
         </Col>
         <Col className="gutter-row" style={{
           marginBottom: "10px",
