@@ -9,7 +9,6 @@ const { Header: AntHeader } = Layout;
 
 const Header = () => {
     const { role , ...userData} = getUserInfo() as any
-    console.log("userData",userData);
     const router = useRouter()
     const logout = ()=>{
 

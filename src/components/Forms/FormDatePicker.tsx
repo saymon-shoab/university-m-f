@@ -1,44 +1,40 @@
-import { DatePicker, DatePickerProps, Input } from "antd";
+'use client'
+import { DatePicker, DatePickerProps } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs, {Dayjs} from 'dayjs';
 
-type UMDatePikerProps = {
-  onChange?: (valOne: Dayjs | null, valTwo: string) => void;
+type UMDatePickerProps = {
+  onChange?: (valOne:Dayjs, valTwo:string) => void;
   name: string;
   label?: string;
   value?: Dayjs;
-  size?: "large" | "small";
+  size?:"large"| "small"
 };
 
 const FormDatePicker = ({
   name,
   label,
   onChange,
-  size = "large",
-}: UMDatePikerProps) => {
-  const { control, setValue } = useFormContext();
-
-  const handleOnChange: DatePickerProps["onChange"] = (date, dateString) => {
-    onChange ? onChange(date, dateString) : null;
-    setValue(name, dateString);
+  size
+}: UMDatePickerProps) => {
+  const { control , setValue } = useFormContext();
+  const handleOnChange: DatePickerProps['onChange'] = (date, dateString) => {
+    // console.log(date.toISOString());
+    const formatedDate = date.toISOString()
+    //@ts-ignore
+    onChange? onChange(formatedDate,dateString as string) : null;
+    // console.log(date, dateString);
+    setValue(name,formatedDate)
   };
-
   return (
-    <div>
-      <p style={{marginBottom:"-13px"}}> {label ? label : null} </p>
-      
-      <br />
+    <div className={`flex flex-col  w-full`}>
+      <p style={{marginBottom:"3px"}}>  {label ? label : null} </p>
+     
       <Controller
         name={name}
         control={control}
-        render={({ field }) => (
-          <DatePicker
-            defaultValue={dayjs(field.value) || ""}
-            size={size}
-            onChange={handleOnChange}
-            style={{ width: "100%" }}
-          />
-        )}
+        render={({ field }) => <DatePicker defaultValue={dayjs(field.value) || Date.now()} size={size} onChange={handleOnChange} style={{width:"100%"}} />
+      }
       />
     </div>
   );

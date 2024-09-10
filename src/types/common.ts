@@ -2,7 +2,7 @@ export interface IMeta {
     limit : number
     page: number
     size: number
-    total?: number
+    total: number
 }
 
 export type ResponseSuccessType = {
@@ -196,4 +196,27 @@ export interface IAcademicCoreSemester {
   createdAt: string;
   updatedAt: string;
   deletedAt?: null;
+}
+
+export interface IOfferedCourse {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt?: null;
+  courseId: string;
+  semesterRegistrationId: string;
+  academicDepartmentId: string;
+  semesterRegistration: ISemesterRegistration;
+  course: ICourse;
+  academicDepartment: IAcademicCoreDepartment;
+}
+
+export interface IAcademicCoreDepartment {
+  id: string;
+  syncId?: null;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt?: null;
+  academicFacultyId: string;
 }
